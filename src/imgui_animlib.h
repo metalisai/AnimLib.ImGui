@@ -65,7 +65,7 @@ EXPORT void imgui_animlib_columns(int count);
 EXPORT void imgui_animlib_separator();
 EXPORT void imgui_animlib_spacing();
 EXPORT void imgui_animlib_push_style_var_float(int idx, float val);
-EXPORT void imgui_animlib_push_style_var_float2(int idx, ImVec2 val);
+EXPORT void imgui_animlib_push_style_var_float2(int idx, ImVec2* val);
 EXPORT void imgui_animlib_pop_style_var(int count);
 EXPORT bool imgui_animlib_begin_menu_bar();
 EXPORT void imgui_animlib_end_menu_bar();
