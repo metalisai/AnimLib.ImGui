@@ -230,3 +230,34 @@ void imgui_animlib_fg_text(ImVec2 screen_pos, ImU32 col, const char *text_begin)
 {
     ImGui::GetForegroundDrawList()->AddText(screen_pos, col, text_begin);
 }
+
+bool imgui_animlib_tree_node(const char* item)
+{
+    return ImGui::TreeNode(item);
+}
+
+void imgui_animlib_tree_pop()
+{
+    ImGui::TreePop();
+}
+
+void imgui_animlib_add_input_character(unsigned int c)
+{
+    if (ImGui::GetCurrentContext() == nullptr)
+    {
+        return;
+    }
+    auto io = &ImGui::GetIO();
+    io->AddInputCharacter(c);
+}
+
+void imgui_animlib_key_edge(unsigned int key, bool newstate)
+{
+    if (ImGui::GetCurrentContext() == nullptr)
+    {
+        return;
+    }
+    auto io = &ImGui::GetIO();
+    io->KeysDown[key] = newstate;
+}
+

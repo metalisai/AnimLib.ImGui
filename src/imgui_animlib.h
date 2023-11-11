@@ -88,6 +88,10 @@ EXPORT bool imgui_animlib_selectable(const char *label, bool *p_selected, int fl
 EXPORT void imgui_animlib_fg_circle_filled(ImVec2 screen_pos, float radius, ImU32 col);
 EXPORT void imgui_animlib_fg_text(ImVec2 screen_pos, ImU32 col, const char *text_begin);
 EXPORT void imgui_animlib_drag_drop_item(const char* item);
+EXPORT bool imgui_animlib_tree_node(const char* item);
+EXPORT void imgui_animlib_tree_pop();
+EXPORT void imgui_animlib_add_input_character(unsigned int c);
+EXPORT void imgui_animlib_key_edge(unsigned int key, bool newstate);
 
 #ifdef __cplusplus
 }
