@@ -92,6 +92,10 @@ EXPORT bool imgui_animlib_tree_node(const char* item);
 EXPORT void imgui_animlib_tree_pop();
 EXPORT void imgui_animlib_add_input_character(unsigned int c);
 EXPORT void imgui_animlib_key_edge(unsigned int key, bool newstate);
+EXPORT void imgui_animlib_progress_bar(float fraction, const ImVec2 *size_arg, const char *overlay);
+EXPORT bool imgui_animlib_begin_popup(const char *str_id, ImGuiWindowFlags flags);
+EXPORT bool imgui_animlib_begin_popup_modal(const char *name, bool *p_open, ImGuiWindowFlags flags);
+EXPORT void imgui_animlib_end_popup();
 
 #ifdef __cplusplus
 }

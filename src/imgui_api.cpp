@@ -261,3 +261,31 @@ void imgui_animlib_key_edge(unsigned int key, bool newstate)
     io->KeysDown[key] = newstate;
 }
 
+void imgui_animlib_progress_bar(float fraction, const ImVec2 *size_arg, const char *overlay)
+{
+    ImVec2 size;
+    if (size_arg == nullptr)
+    {
+        size = ImVec2(-FLT_MIN, 0.0f);
+    }
+    else
+    {
+        size = *size_arg;
+    }
+    ImGui::ProgressBar(fraction, size, overlay);
+}
+
+bool imgui_animlib_begin_popup(const char *str_id, ImGuiWindowFlags flags)
+{
+    return ImGui::BeginPopup(str_id, flags);
+}
+
+bool imgui_animlib_begin_popup_modal(const char *name, bool *p_open, ImGuiWindowFlags flags)
+{
+    return ImGui::BeginPopupModal(name, p_open, flags);
+}
+
+void imgui_animlib_end_popup()
+{
+    ImGui::EndPopup();
+}
