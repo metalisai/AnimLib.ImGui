@@ -20,6 +20,12 @@ typedef struct IRect
     int x, y, w, h;
 } IRect;
 
+typedef struct MyIVec2
+{
+    float x, y;
+} MyIVec2;
+
+
 typedef enum AnimlibCallbackId
 {
     AnimlibCallbackId_None = 0,
@@ -56,7 +62,7 @@ EXPORT void imgui_animlib_same_line();
 EXPORT bool imgui_animlib_color_edit4(const char *label, float col[4]);
 EXPORT bool imgui_animlib_input_text(const char *label, char *buf, unsigned int size);
 EXPORT bool imgui_animlib_input_double(const char *label, double *val);
-EXPORT ImVec2 imgui_animlib_get_mouse_pos();
+EXPORT MyIVec2 imgui_animlib_get_mouse_pos();
 EXPORT bool imgui_animlib_begin_drag_drop_target();
 EXPORT void imgui_animlib_end_drag_drop_target();
 EXPORT const void* imgui_animlib_accept_drag_drop_payload(const char *name);
@@ -72,7 +78,7 @@ EXPORT void imgui_animlib_end_menu_bar();
 EXPORT bool imgui_animlib_begin_menu(const char *label);
 EXPORT void imgui_animlib_end_menu();
 EXPORT bool imgui_animlib_menu_item(const char *item);
-EXPORT ImVec2 imgui_animlib_get_window_size();
+EXPORT MyIVec2 imgui_animlib_get_window_size();
 EXPORT void imgui_animlib_push_style_color_u32(int idx, ImU32 col);
 EXPORT void imgui_animlib_push_style_color_float4(int idx, struct ImVec4 const *col);
 EXPORT void imgui_animlib_pop_style_color(int count);

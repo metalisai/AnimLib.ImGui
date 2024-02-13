@@ -53,9 +53,10 @@ bool imgui_animlib_input_text(const char *label, char *buf, unsigned int size)
     return ImGui::InputText(label, buf, size);
 }
 
-ImVec2 imgui_animlib_get_mouse_pos()
+MyIVec2 imgui_animlib_get_mouse_pos()
 {
-    return (ImVec2)ImGui::GetMousePos();
+    auto pos = ImGui::GetMousePos();
+    return { pos.x, pos.y };
 }
 
 bool imgui_animlib_begin_drag_drop_target()
@@ -133,9 +134,10 @@ bool imgui_animlib_menu_item(const char *item)
     return ImGui::MenuItem(item);
 }
 
-ImVec2 imgui_animlib_get_window_size()
+MyIVec2 imgui_animlib_get_window_size()
 {
-    return ImGui::GetWindowSize();
+    auto winSize = ImGui::GetWindowSize();
+    return { winSize.x, winSize.y };
 }
 
 void imgui_animlib_push_style_color_u32(int idx, ImU32 col)
