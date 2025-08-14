@@ -49,7 +49,7 @@ EXPORT void imgui_animlib_update(ImGuiAnimlibState* state, int width, int height
 EXPORT void imgui_animlib_begin_frame(ImGuiAnimlibState* state);
 EXPORT void imgui_animlib_end_frame(ImGuiAnimlibState* state);
 EXPORT void imgui_animlib_set_font_texture(ImGuiAnimlibState* state, int texture);
-EXPORT IRect imgui_animlib_scene_window(ImGuiAnimlibState* state, double view_aspect, int texture_handle, bool playing, float cursor, float cursor_max);
+EXPORT IRect imgui_animlib_scene_window(ImGuiAnimlibState* state, double view_aspect, int texture_handle, bool playing, float cursor, float cursor_max, int minutes, int seconds);
 EXPORT void imgui_animlib_set_cb(ImGuiAnimlibState* state, AnimlibCallbackId cb_id, void* cb);
 
 // imgui api

@@ -308,8 +308,6 @@ enum OpenTKKeyKey
 	OpenTKKey_LastKey = 131
 };
 
-void test_window();
-
 struct ImGuiAnimlibState
 {
     ImGuiContext* ctx;
@@ -469,8 +467,6 @@ void imgui_animlib_main_dock(ImGuiAnimlibState* state)
 
     menu_size = ImGui::GetWindowSize();
 
-    //test_window();
-
     ImGui::End();
 
     ImGui::SetNextWindowDockID(dockspace_id, ImGuiCond_FirstUseEver);
@@ -499,19 +495,7 @@ ImVec4 calculate_view_area(int x, int y, int width, int height, double view_aspe
     return ImVec4((float)(wShrink/2) , y, w, h);
 }
 
-void test_window()
-{
-    ImGui::ShowDemoWindow();
-    ImGui::Begin("Test");
-    ImGui::Text("Hello, world!");
-    ImGui::Button(ICON_FA_PLAY, ImVec2(50.0f, 20.0f));
-    ImGui::SameLine();
-    static float stest = 0.0f;
-    Seekbar("##seekbar", &stest, 0.0f, 1.0f);
-    ImGui::End();
-}
-
-IRect imgui_animlib_scene_window(ImGuiAnimlibState* state, double view_aspect, int texture_handle, bool playing, float cursor, float cursor_max)
+IRect imgui_animlib_scene_window(ImGuiAnimlibState* state, double view_aspect, int texture_handle, bool playing, float cursor, float cursor_max, int minutes, int seconds)
 {
     ImGui::SetCurrentContext(state->ctx);
 
@@ -552,6 +536,8 @@ IRect imgui_animlib_scene_window(ImGuiAnimlibState* state, double view_aspect, i
     {
         state->play_cb();
     }
+    ImGui::SameLine();
+    ImGui::Text("%02d:%02d", minutes, seconds);
     ImGui::SameLine();
     if(Seekbar("##seekbar", &cursor, 0.0f, cursor_max))
     {
